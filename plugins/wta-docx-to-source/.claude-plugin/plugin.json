@@ -1,5 +1,0 @@
-{
-  "name": "wta-docx-to-source",
-  "description": "Convert a WiseTech Academy content block Word script (.docx, the LD/DIY script template) into the page source code for the DIY editor — a single .html file using the WTA widget tags (wta-scroll-animator, wta-hotspot, wta-text-reveal, wta-expander, wta-html-import, wta-question, alert callouts, CDN images). Trigger when a learning designer uploads a script .docx and asks to 'convert to source code', 'transfer the script to code', 'make the source code', 'build the DIY source', 'code this page', or 'turn this docx into HTML for the LMS'. Do NOT use for building standalone HTML interactions (use lxd-coder / content-block-html-imports) or for writing script content.",
-  "version": "1.0.0"
-}
