@@ -1,1 +1,1 @@
-# wta-docx-to-source
+Welcome to the shared skill repo for the WTA word doc to CCA source code skill. This page is a WIP, and is built for claude.
