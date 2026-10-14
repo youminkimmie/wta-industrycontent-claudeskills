@@ -1,0 +1,7 @@
+{
+  "name": "wta-docx-to-source",
+  "owner": { "Youmin": "WTA Industry Content", "email": "you@example.com" },
+  "plugins": [
+    { "name": "wta-docx-to-source", "source": "./plugins/wta-docx-to-source" }
+  ]
+}
