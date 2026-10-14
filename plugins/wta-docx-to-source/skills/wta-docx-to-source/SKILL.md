@@ -126,6 +126,8 @@ PY
    python3 /tmp/glossary_links.py mark "<path/to/script.docx>" /tmp/<CODE>_marked.docx
    ```
 
+1c. **If the user uploads an additional screenshot of the uploaded files (eg pictures, HTMLs), use it to update the source code with the correct file extension.** For example, if the script contains a reference to image N-AFRS-M1P01d, and the user uploads a screenshot of that image as N-AFRS-M1P01d.jpg, then run the converter with `--ext jpg` to update the source code to use the correct file extension. There are a couple of possible caveats to this that must be checked: first, the screenshot might not contain all the images in the script, so must not assume the extension for any images is the same as the ones in the screenshot. If there's an image in the script but not the screenshot, default to other rules in this process. Second, in the case of the HTML files, the markup code must use the file with _launcher.html at the end, as that is the launcher. If there's a HTML without a launcher, or there's a missing html from a screenshot with other HTMLs in it, flag with user and ask which one to use.
+
 2. **Run the converter** (python-docx is preinstalled; if missing: `pip install python-docx --break-system-packages`):
    ```bash
    SCRIPT="${CLAUDE_SKILL_DIR}/scripts/docx_to_source.py"
@@ -170,7 +172,7 @@ PY
    Red and green callouts are unchanged. Glossary links inside a case study come only from green highlights (step 2d).
 
 2c. **Apply the SVG rule** (always run it; safe to run twice). Images inside a scroll animator or a
-   text reveal are SVG uploads, so their CDN path ends in `.svg`, not `.png`. Other images (banners,
+   text reveal are usually SVG uploads, so if no screenshot is available, their CDN path ends in `.svg`, not `.png`. Other images (banners,
    diagrams, standalone column sets, hotspots) keep `.png` (or the `--ext` value):
    ```bash
    cat > /tmp/widget_svg_fix.py <<'PY'
